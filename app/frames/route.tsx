@@ -1,40 +1,37 @@
-/* eslint-disable react/jsx-key */
 import { Button } from "frames.js/next";
 import { frames } from "./frames";
-import { appURL } from "../utils";
 
-const frameHandler = frames(async (ctx) => {
-  const counter = ctx.message
-    ? ctx.searchParams.op === "+"
-      ? ctx.state.counter + 1
-      : ctx.state.counter - 1
-    : ctx.state.counter;
-
+const handleRequest = frames(async (ctx) => {
   return {
     image: (
-      <div tw="flex flex-col">
-        <div tw="flex">frames.js starter</div>
-        {ctx.message?.inputText && (
-          <div tw="flex">{`Input: ${ctx.message.inputText}`}</div>
-        )}
-        <div tw="flex">Counter {counter}</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        Open Frames - Frames.js Starter
       </div>
     ),
-    textInput: "Say something",
+    textInput: "Type something here",
     buttons: [
-      <Button action="post" target={{ pathname: "/", query: { op: "+" } }}>
-        Increment
+      <Button
+        action="link"
+        target={
+          "https://github.com/builders-garden/open-frames-starter-framesjs"
+        }
+      >
+        Link
       </Button>,
-      <Button action="post" target={{ pathname: "/", query: { op: "-" } }}>
-        Decrement
+      <Button action="post" target={"/post"}>
+        Post
       </Button>,
-      <Button action="link" target={appURL()}>
-        External
+      <Button action="tx" target={"/tx"} post_url={"/tx/success"}>
+        Tx
       </Button>,
     ],
-    state: { counter: counter },
   };
 });
 
-export const GET = frameHandler;
-export const POST = frameHandler;
+export const GET = handleRequest;
+export const POST = handleRequest;

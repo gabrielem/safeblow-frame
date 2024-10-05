@@ -1,40 +1,30 @@
-# Frames.js Starter Kit
+# Open Frames Starter - Frames.js 🖼️
 
-This is a boilerplate repo to get started quickly with `frames.js`
+## Quickstart 🚀
 
-## Quickstart
+Get started with `npx create-open-frames`in your CLI.
 
-If running from the frames.js repository itself:
+## About
 
-- Run `yarn` from the repository root
-- Run `cd examples/framesjs-starter`
+Start building Open Frames compatible with Farcaster, XMTP, Lens and soon other protocol, expanding Frames boundaries to your imagination.
 
-1. Install dependencies `yarn install`
+This starter repo is built with [Frames.js](https://framesjs.org) and Next.js.
 
-2. Run the dev server `yarn dev`
+If you want prefer to use another Frames framework:
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Frog](https://frog.fm) -> [Github Repo](https://github.com/builders-garden/open-frames-starter-frog)
+- [Onchainkit](https://onchainkit.xyz/) -> [Github Repo](https://github.com/builders-garden/open-frames-starter-onchainkit)
 
-4. Edit `app/page.tsx`
+## What does the starter include
 
-5. Visit [http://localhost:3000/debug](http://localhost:3000/debug) to debug your frame.
+This starter repo includes a simple frame with an input field and 3 buttons:
 
-6. (Optional) To use a real signer (costs warps), copy `.env.sample` to `.env` and fill in the env variables following the comments provided
+- Link -> showcase how to implement redirect buttons
+- Post -> showcase how to navigate between different frame routes, executing actions, passing states and generating dynamic images
+- Transaction -> showcase how to implement a transaction button, fetching the caller address and preparing the transaction calldata
 
-## Docs, Questions and Help
+## How to use
 
-- [Frames.js Documentation](https://framesjs.org)
-- [Awesome frames](https://github.com/davidfurlong/awesome-frames?tab=readme-ov-file)
-- Join the [/frames-dev](https://warpcast.com/~/channel/frames-devs) channel on Farcaster to ask questions
-
-## If you get stuck or have feedback, [Message @df please!](https://warpcast.com/df)
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy
-
-```bash
-vercel
-```
-
-more deployment links coming soon, PRs welcome!
+1. Install: `yarn`
+2. Run: `yarn dev`
+3. Debug: visit `http://localhost:3000`
